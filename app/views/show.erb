@@ -1,0 +1,26 @@
+<center><h4><%= @robot.name %></h4></center>
+<div class="col-md-4">
+  <img src="<%= @robot.avatar_location %>" class="img-responsive">
+  <div class="row">
+    <div class="form-group">
+      <div class="col-xs-5">
+        <form action="/robots/<%= @robot.id %>/edit" method="GET">
+          <button type="submit" class="btn btn-primary" value="Update">Edit Information</button>
+        </form>
+      </div>
+      <div class="col-xs-4">
+        <form action="/robots/<%= @robot.id %>" method="POST">
+        <input type='hidden' name='_method' value='DELETE'>
+          <button type="submit" class="btn btn-danger" value="Delete">Terminate Robot</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h5>
+  <strong>Birthday:</strong> <%= @robot.birthday %><br><br><br>
+  <strong>Location:</strong> <%= @robot.city %>, <%= @robot.state %><br><br><br>
+  <strong>Department:</strong> <%= @robot.department %><br><br><br>
+  <strong>Hire Date:</strong> <%= @robot.hire_date %><br><br><br>
+</h5>

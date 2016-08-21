@@ -1,0 +1,23 @@
+<h4>Robots @ <strong>RobotWoRLD</strong></h4>
+<% if @robots.length > 1 || @robots.length == 0 %>
+  <p>Robot World current employs <%= @robots.length %> robots.</p>
+<% else %>
+  <p>Robot World current employs <%= @robots.length %> robot.</p>
+<% end %>
+<% @robots.each do |robot| %>
+  <div class="media">
+    <div class="media-left">
+      <a href="/robots/<%= robot.id %>">
+        <img class="media-object" id="profile-pic" src="<%= robot.avatar_location %>" alt="<%= robot.name %>">
+      </a>
+    </div>
+    <div class="media-right">
+      <a href="/robots/<%= robot.id %>">
+        <h4 class="media-heading"><%= robot.name %></h4>
+      </a>
+      <p><br><strong>Department:</strong> <%= robot.department %><br>
+      <strong>Creation Date:</strong> <%= robot.birthday %><br>
+      <strong>Hire Date:</strong> <%= robot.hire_date %></p>
+    </div>
+  </div>
+<% end %>
