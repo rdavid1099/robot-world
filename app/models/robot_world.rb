@@ -91,10 +91,26 @@ class RobotWorld
       "Treachery",
       "Robot Hell",
       "http://vignette4.wikia.nocookie.net/en.futurama/images/e/ea/RobotDevil.jpg/revision/latest?cb=20111024080305",
-      "ETERNITY",
+      "0000/01/01",
       Time.now.to_s[0..9],
       "Running Robot Hell"
     )
+  end
+
+  def average_age
+    total_age = all.map {|robot| robot.age }.inject(:+)
+    total_age / all.length
+  end
+
+  def created_this_year
+    this_year = Time.now.to_s[0..3]
+    all.reduce([]) do |result, robot|
+      result << robot if hired_this_year?(robot)
+    end
+  end
+
+  def hired_this_year?(robot)
+    Time.now.to_s[0..3] == Time.parse(robot.hire_date).to_s[0..3]
   end
 
   def delete_all

@@ -1,9 +1,21 @@
-.logo-image {
+.small-logo-image {
   max-width: 25px;
   max-height: 25px;
   width: auto;
   height: auto;
-  vertical-align: middle;
+  vertical-align: bottom;
+}
+
+.logo-image {
+  max-width: 40px;
+  max-height: 40px;
+  width: auto;
+  height: auto;
+  vertical-align: bottom;
+}
+
+.dashboard-header {
+  text-align: center;
 }
 
 .page-header {
@@ -11,7 +23,8 @@
 }
 
 body {
-  background-color: #5d5a6d;
+  background-image: url("/photos/binary_wallpaper.jpg");
+  background-color: #000000;
 }
 
 #profile-pic {

@@ -20,4 +20,8 @@ class Robot
     @department = data["department"]
   end
 
+  def age
+    ((Time.now - Time.parse(birthday))/60/60/24/31/12).to_i
+  end
+
 end
